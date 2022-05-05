@@ -1,0 +1,62 @@
+@import 'reset-css';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: JejuMyeongjo;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+#__next {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'JejuMyeongjo';
+  font-weight: 400;
+  src: url('/fonts/JejuMyeongjo.ttf') format('truetype');
+}
