@@ -1,7 +1,8 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import logo from '../../assets/logo.svg';
 import Image from 'next/image';
+import React from 'react';
+
+import logo from '../../assets/logo.svg';
 
 function Intro() {
   return (
@@ -11,7 +12,7 @@ function Intro() {
         <br />
         커밋한 데 머리 난다!
       </Styled.TitleLabel>
-      <Image src={logo} width="253px"></Image>
+      <Image src={logo} alt="HACKER" width="253px"></Image>
       <Styled.StoreRound>곧 스토어에서 만나요!</Styled.StoreRound>
     </Styled.IntroWrapper>
   );
@@ -25,6 +26,7 @@ const Styled = {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
   `,
 
   TitleLabel: styled.p`
