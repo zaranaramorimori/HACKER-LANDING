@@ -6,7 +6,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: JejuMyeongjo;
+  font-family: NotoSansKR-Regular;
 }
 
 button {
@@ -30,8 +30,6 @@ body {
 }
 
 #__next {
-  display: flex;
-  justify-content: center;
   background: white;
   width: 600px;
   max-width: 600px;
@@ -39,7 +37,7 @@ body {
 }
 
 #__next * {
-  width: 100%;
+  /* width: 100%; */
   overflow-wrap: break-word;
   overflow: hidden;
 }
@@ -77,7 +75,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 @font-face {
-  font-family: 'JejuMyeongjo';
+  font-family: 'NotoSansKR-Regular';
   font-weight: 400;
-  src: url('/fonts/JejuMyeongjo.ttf') format('truetype');
+  src: url('/fonts/NotoSansKR-Regular.otf') format('truetype');
 }
