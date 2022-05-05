@@ -1,12 +1,21 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
+import popupBg from '../../assets/blackBackground.png';
 import buttonBg from '../../assets/hackerButton.svg';
 import phoneBoy from '../../assets/phoneBoy.svg';
 import UserInput from '../common/UserInput';
 
 function Register() {
+  const [devCount, setDevCount] = useState(0);
+  const [isRegistered, setIsRegistered] = useState(false);
+
+  const handleRegister = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setDevCount(1);
+    setIsRegistered(true);
+  };
+
   return (
     <Styled.Main>
       <Image src={phoneBoy} alt="해커 앱을 보여주는 청년" width="243px"></Image>
@@ -17,12 +26,26 @@ function Register() {
         <p>가장 빠르게 머리를 길러 봐요</p>
       </Styled.InfoLabelWrapper>
       <Styled.InputWrapper>
-        <UserInput placeholder="출시 알림을 받을 이메일을 적어주세요" />
-        <UserInput placeholder="Github username을 적어주세요" />
+        {isRegistered ? (
+          <Styled.RegisterSuccess>
+            <p>
+              우와!
+              <br />
+              <span>23번째</span> 개발자님이에요.
+              <br />
+              감사해요!
+            </p>
+          </Styled.RegisterSuccess>
+        ) : (
+          <>
+            <UserInput placeholder="출시 알림을 받을 이메일을 적어주세요" />
+            <UserInput placeholder="Github username을 적어주세요" />
+          </>
+        )}
       </Styled.InputWrapper>
-      <Styled.RegisterButton>사전등록 하기!</Styled.RegisterButton>
+      <Styled.RegisterButton onClick={handleRegister}>사전등록 하기!</Styled.RegisterButton>
       <Styled.WithLabel>
-        <span>22명</span>의 개발자가 함께하고 있어요.
+        <span>{devCount}명</span>의 개발자가 함께하고 있어요.
       </Styled.WithLabel>
     </Styled.Main>
   );
@@ -69,6 +92,27 @@ const Styled = {
     justify-content: space-between;
     align-items: center;
     height: 121px;
+  `,
+
+  RegisterSuccess: styled.div`
+    width: 287px;
+    background-image: url(${popupBg.src});
+    background-size: 287px 121px;
+
+    > p {
+      font-family: 'Noto Sans KR';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 26px;
+      color: white;
+      text-align: center;
+      padding: 23px 0;
+
+      > * {
+        color: #f0bb00;
+      }
+    }
   `,
 
   RegisterButton: styled.button`
