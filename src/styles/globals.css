@@ -25,15 +25,36 @@ button {
 body {
   display: flex;
   justify-content: center;
-}
-
-#root {
-  display: flex;
-  justify-content: center;
+  background: black;
+  color: black;
 }
 
 #__next {
+  display: flex;
+  justify-content: center;
+  background: white;
+  width: 600px;
+  max-width: 600px;
+  height: 100%;
+}
+
+#__next * {
   width: 100%;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  #__next {
+    width: 414px;
+    max-width: 414px;
+  }
+}
+
+@media (max-width: 413px) {
+  #__next {
+    width: 100%;
+  }
 }
 
 a {
