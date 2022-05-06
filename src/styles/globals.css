@@ -38,7 +38,7 @@ body {
 #__next * {
   /* width: 100%; */
   overflow-wrap: break-word;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 @media (max-width: 767px) {

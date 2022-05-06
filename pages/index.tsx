@@ -9,9 +9,15 @@ import Register from '../src/components/home/Register';
 const Home: NextPage = () => {
   return (
     <Styled.Main>
-      <Intro />
-      <Counter />
-      <Register />
+      <Styled.CenterAligner>
+        <Intro />
+      </Styled.CenterAligner>
+      <Styled.CenterAligner>
+        <Counter />
+      </Styled.CenterAligner>
+      <Styled.CenterAligner>
+        <Register />
+      </Styled.CenterAligner>
       <Footer />
     </Styled.Main>
   );
@@ -21,7 +27,15 @@ export default Home;
 
 const Styled = {
   Main: styled.main`
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+  `,
+
+  CenterAligner: styled.div`
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   `,
 };

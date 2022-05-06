@@ -22,11 +22,11 @@ export default Intro;
 
 const Styled = {
   IntroWrapper: styled.div`
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
+    scroll-snap-align: center;
   `,
 
   TitleLabel: styled.p`

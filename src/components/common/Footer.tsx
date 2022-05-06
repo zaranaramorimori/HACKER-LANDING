@@ -49,6 +49,8 @@ const Styled = {
     flex-direction: column;
     justify-content: space-between;
     margin-top: 188px;
+    scroll-snap-align: center;
+    padding: 0;
   `,
 
   TopWrapper: styled.div`

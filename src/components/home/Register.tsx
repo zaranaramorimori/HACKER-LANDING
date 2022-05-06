@@ -58,7 +58,8 @@ const Styled = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
+    scroll-snap-align: center;
   `,
 
   InfoLabelWrapper: styled.div`
@@ -97,7 +98,7 @@ const Styled = {
   RegisterSuccess: styled.div`
     width: 287px;
     background-image: url(${popupBg.src});
-    background-size: 287px 121px;
+    background-size: 100% 100%;
 
     > p {
       font-family: 'Noto Sans KR';

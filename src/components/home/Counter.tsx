@@ -34,7 +34,8 @@ const Styled = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
+    scroll-snap-align: center;
 
     p:nth-child(2) {
       margin-top: 52px;
