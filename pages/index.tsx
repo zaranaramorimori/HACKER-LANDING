@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Footer from '@src/components/common/Footer';
 import type { NextPage } from 'next';
 
 import Counter from '../src/components/home/Counter';
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
       <Intro />
       <Counter />
       <Register />
+      <Footer />
     </Styled.Main>
   );
 };
