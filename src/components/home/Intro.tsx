@@ -42,14 +42,13 @@ const Styled = {
     }
   `,
 
-  StoreRound: styled.p`
+  StoreRound: styled.button`
     width: 327px;
     height: 50px;
     background-color: black;
     border-radius: 30px;
     color: white;
     text-align: center;
-    padding: 13px 0;
     margin-top: 85px;
 
     @media (max-width: 767px) {
