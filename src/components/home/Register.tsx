@@ -18,14 +18,35 @@ function Register() {
 
   const loginData = { email, username };
 
+  client
+    .get<GenericResponse<RegisterResponse>>('/event')
+    .then((res) => {
+      setDevCount(1);
+      // setDevCount(res.data.data.count)
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   const handleRegister = async () => {
     if (!isRegistered) {
-      const { data } = await client.post<GenericResponse<RegisterResponse>>('/event', loginData);
+      try {
+        const { data } = await client.post<GenericResponse<RegisterResponse>>('/event', loginData);
 
-      console.log(data, email, username);
-      // setDevCount(data.data.count);
-      setDevCount(1);
-      data.status == 200 && setIsRegistered(true);
+        if (data.status == 200) {
+          // setDevCount(data.data.count);
+          setDevCount(1);
+          setIsRegistered(true);
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        if (error.response) {
+          alert(
+            '사전등록에 실패했습니다. 이미 등록된 정보일 수 있습니다. 아니라면 잠시 후 다시 시도해주세요.',
+          );
+        }
+      }
     }
   };
 
