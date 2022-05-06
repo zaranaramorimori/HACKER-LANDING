@@ -6,12 +6,12 @@ export type TimeLeft = {
 };
 
 export const calculateTimeLeft = () => {
-  const year = 2022;
-  const month = 5;
-  const day = 10;
+  const targetDate = new Date('2022-05-10 17:00:00');
+  const nowDate = new Date();
 
-  const difference = +new Date(`${year}-${month}-${day}`) - +new Date();
+  const difference = targetDate.getTime() - nowDate.getTime();
 
+  console.log(difference);
   let timeLeft: TimeLeft = {} as TimeLeft;
 
   if (difference > 0) {
