@@ -6,9 +6,9 @@ export type TimeLeft = {
 };
 
 export const calculateTimeLeft = () => {
-  let year = new Date().getFullYear();
-  let month = new Date().getMonth() + 1;
-  let day = new Date().getDate() + 2;
+  const year = 2022;
+  const month = 5;
+  const day = 10;
 
   const difference = +new Date(`${year}-${month}-${day}`) - +new Date();
 
@@ -20,6 +20,13 @@ export const calculateTimeLeft = () => {
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / 1000 / 60) % 60),
       seconds: Math.floor((difference / 1000) % 60),
+    };
+  } else {
+    timeLeft = {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
     };
   }
 
