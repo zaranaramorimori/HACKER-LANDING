@@ -19,10 +19,9 @@ function Register() {
   const loginData = { email, username };
 
   client
-    .get<GenericResponse<RegisterResponse>>('/event')
+    .get<GenericResponse<number>>('/event')
     .then((res) => {
-      setDevCount(1);
-      // setDevCount(res.data.data.count)
+      setDevCount(res.data.data);
     })
     .catch((error) => {
       console.log(error);
@@ -31,20 +30,22 @@ function Register() {
   const handleRegister = async () => {
     if (!isRegistered) {
       try {
-        const { data } = await client.post<GenericResponse<RegisterResponse>>('/event', loginData);
+        const { data } = await client.post<GenericResponse<number>>('/event', loginData);
 
         if (data.status == 200) {
-          // setDevCount(data.data.count);
-          setDevCount(1);
+          setDevCount(data.data);
           setIsRegistered(true);
         } else {
           alert(data.message);
         }
       } catch (error) {
-        if (error.response) {
-          alert(
-            '사전등록에 실패했습니다. 이미 등록된 정보일 수 있습니다. 아니라면 잠시 후 다시 시도해주세요.',
-          );
+        switch (error.response.status) {
+          case 400:
+            console.log('error message', error.message);
+            alert(`${error.response.data.message}`);
+            break;
+          default:
+            alert('사전등록에 실패했습니다.');
         }
       }
     }
