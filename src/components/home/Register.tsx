@@ -11,7 +11,7 @@ function Register() {
   const [devCount, setDevCount] = useState(0);
   const [isRegistered, setIsRegistered] = useState(false);
 
-  const handleRegister = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleRegister = () => {
     setDevCount(1);
     setIsRegistered(true);
   };
@@ -31,7 +31,7 @@ function Register() {
             <p>
               우와!
               <br />
-              <span>23번째</span> 개발자님이에요.
+              <span>{devCount}번째</span> 개발자님이에요.
               <br />
               감사해요!
             </p>
