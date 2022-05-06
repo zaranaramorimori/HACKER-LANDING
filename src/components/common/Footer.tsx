@@ -14,35 +14,43 @@ function Footer() {
   };
 
   return (
-    <Styled.Main>
-      <Styled.TopWrapper>
-        <Styled.InstagramWrapper>
-          <Styled.TitleLabel>팀 헤커</Styled.TitleLabel>
-          <Styled.InstagramButton onClick={handleInstagram} />
-        </Styled.InstagramWrapper>
-        <Styled.PolicyWrapper>
-          <Styled.TitleLabel>정책</Styled.TitleLabel>
-          <Styled.PolicyLabel href="https://www.instagram.com/haircommit/">
-            이용약관
-          </Styled.PolicyLabel>
-          <Styled.PolicyLabel href="https://www.instagram.com/haircommit/">
-            개인정보 처리방침
-          </Styled.PolicyLabel>
-        </Styled.PolicyWrapper>
-      </Styled.TopWrapper>
-      <Styled.BottomWrapper>
-        <Styled.CopyRightLabel>© TeamZZONG</Styled.CopyRightLabel>
-        <Image src={boysImage} alt="헤커 청년들" width="195px"></Image>
-      </Styled.BottomWrapper>
-    </Styled.Main>
+    <Styled.MainWrapper>
+      <Styled.Main>
+        <Styled.TopWrapper>
+          <Styled.InstagramWrapper>
+            <Styled.TitleLabel>팀 헤커</Styled.TitleLabel>
+            <Styled.InstagramButton onClick={handleInstagram} />
+          </Styled.InstagramWrapper>
+          <Styled.PolicyWrapper>
+            <Styled.TitleLabel>정책</Styled.TitleLabel>
+            <Styled.PolicyLabel href="https://www.instagram.com/haircommit/">
+              이용약관
+            </Styled.PolicyLabel>
+            <Styled.PolicyLabel href="https://www.instagram.com/haircommit/">
+              개인정보 처리방침
+            </Styled.PolicyLabel>
+          </Styled.PolicyWrapper>
+        </Styled.TopWrapper>
+        <Styled.BottomWrapper>
+          <Styled.CopyRightLabel>© TeamZZONG</Styled.CopyRightLabel>
+          <Image src={boysImage} alt="헤커 청년들" width="195px"></Image>
+        </Styled.BottomWrapper>
+      </Styled.Main>
+    </Styled.MainWrapper>
   );
 }
 
 export default Footer;
 
 const Styled = {
+  MainWrapper: styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `,
+
   Main: styled.div`
-    width: 100%;
+    width: 600px;
     height: 467px;
     background-image: url(${bgImg.src});
     display: flex;
@@ -51,6 +59,10 @@ const Styled = {
     margin-top: 188px;
     scroll-snap-align: center;
     padding: 0;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
   `,
 
   TopWrapper: styled.div`
