@@ -168,6 +168,11 @@ const Styled = {
     height: 60px;
     background: url(${buttonBg.src});
     color: white;
+    font-size: 17px;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
   `,
 
   WithLabel: styled.p`

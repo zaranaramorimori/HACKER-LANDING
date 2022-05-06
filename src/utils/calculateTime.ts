@@ -11,7 +11,6 @@ export const calculateTimeLeft = () => {
 
   const difference = targetDate.getTime() - nowDate.getTime();
 
-  console.log(difference);
   let timeLeft: TimeLeft = {} as TimeLeft;
 
   if (difference > 0) {
