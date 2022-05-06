@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import useInput from '@src/hooks/useInput';
+import { client } from '@src/lib/api/api';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
@@ -6,14 +8,25 @@ import popupBg from '../../assets/blackBackground.png';
 import buttonBg from '../../assets/hackerButton.svg';
 import phoneBoy from '../../assets/phoneBoy.svg';
 import UserInput from '../common/UserInput';
+import { GenericResponse, RegisterResponse } from '../types';
 
 function Register() {
   const [devCount, setDevCount] = useState(0);
   const [isRegistered, setIsRegistered] = useState(false);
+  const [email, setEmail, onChangeEmail] = useInput<string>('');
+  const [username, setUsername, onChangeUsername] = useInput<string>('');
 
-  const handleRegister = () => {
-    setDevCount(1);
-    setIsRegistered(true);
+  const loginData = { email, username };
+
+  const handleRegister = async () => {
+    if (!isRegistered) {
+      const { data } = await client.post<GenericResponse<RegisterResponse>>('/event', loginData);
+
+      console.log(data, email, username);
+      // setDevCount(data.data.count);
+      setDevCount(1);
+      data.status == 200 && setIsRegistered(true);
+    }
   };
 
   return (
@@ -38,12 +51,17 @@ function Register() {
           </Styled.RegisterSuccess>
         ) : (
           <>
-            <UserInput placeholder="출시 알림을 받을 이메일을 적어주세요" />
-            <UserInput placeholder="Github username을 적어주세요" />
+            <UserInput
+              placeholder="출시 알림을 받을 이메일을 적어주세요"
+              onChange={onChangeEmail}
+            />
+            <UserInput placeholder="Github username을 적어주세요" onChange={onChangeUsername} />
           </>
         )}
       </Styled.InputWrapper>
-      <Styled.RegisterButton onClick={handleRegister}>사전등록 하기!</Styled.RegisterButton>
+      <Styled.RegisterButton onClick={handleRegister}>
+        {isRegistered ? '사전등록 완료!' : '사전등록 하기!'}
+      </Styled.RegisterButton>
       <Styled.WithLabel>
         <span>{devCount}명</span>의 개발자가 함께하고 있어요.
       </Styled.WithLabel>
