@@ -34,7 +34,6 @@ const Styled = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* height: 100vh; */
     scroll-snap-align: center;
 
     p:nth-child(2) {
@@ -48,6 +47,10 @@ const Styled = {
       > * {
         color: #f0bb00;
       }
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
     }
 
     p:nth-child(3) {
@@ -56,6 +59,10 @@ const Styled = {
       font-weight: 700;
       font-size: 36px;
       margin-top: 22px;
+
+      @media (max-width: 767px) {
+        font-size: 25px;
+      }
     }
   `,
 
@@ -65,5 +72,9 @@ const Styled = {
     font-weight: 900;
     font-size: 50px;
     margin-top: 98px;
+
+    @media (max-width: 767px) {
+      font-size: 30px;
+    }
   `,
 };

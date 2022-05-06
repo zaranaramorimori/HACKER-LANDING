@@ -63,6 +63,10 @@ const Styled = {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media (max-width: 767px) {
+      margin-left: 43px;
+    }
   `,
 
   PolicyWrapper: styled.div`
@@ -70,6 +74,10 @@ const Styled = {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media (max-width: 767px) {
+      margin-left: 115px;
+    }
   `,
 
   TitleLabel: styled.div`
@@ -78,6 +86,10 @@ const Styled = {
     font-size: 20px;
     color: white;
     margin-bottom: 25px;
+
+    @media (max-width: 767px) {
+      font-size: 15px;
+    }
   `,
 
   InstagramButton: styled.button`
@@ -91,6 +103,10 @@ const Styled = {
     display: flex;
     justify-content: space-between;
     padding-left: 70px;
+
+    @media (max-width: 767px) {
+      padding-left: 43px;
+    }
   `,
 
   PolicyLabel: styled.a`
@@ -99,6 +115,10 @@ const Styled = {
     font-size: 15px;
     color: white;
     margin-bottom: 15px;
+
+    @media (max-width: 767px) {
+      font-size: 13px;
+    }
   `,
 
   CopyRightLabel: styled.p`
@@ -107,5 +127,10 @@ const Styled = {
     font-size: 13px;
     color: #f0bb00;
     margin-top: 60px;
+
+    @media (max-width: 767px) {
+      font-size: 10px;
+      margin-top: 40px;
+    }
   `,
 };

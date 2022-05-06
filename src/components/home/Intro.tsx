@@ -12,7 +12,7 @@ function Intro() {
         <br />
         커밋한 데 머리 난다!
       </Styled.TitleLabel>
-      <Image src={logo} alt="HACKER" width="253px"></Image>
+      <Image src={logo} alt="HACKER" width="250vw"></Image>
       <Styled.StoreRound>곧 스토어에서 만나요!</Styled.StoreRound>
     </Styled.IntroWrapper>
   );
@@ -25,7 +25,6 @@ const Styled = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* height: 100vh; */
     scroll-snap-align: center;
   `,
 
@@ -37,15 +36,24 @@ const Styled = {
     font-size: 24px;
     line-height: 150%;
     margin-bottom: 68px;
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+    }
   `,
 
   StoreRound: styled.p`
     width: 327px;
+    height: 50px;
     background-color: black;
     border-radius: 30px;
     color: white;
     text-align: center;
     padding: 13px 0;
     margin-top: 85px;
+
+    @media (max-width: 767px) {
+      width: 247px;
+    }
   `,
 };

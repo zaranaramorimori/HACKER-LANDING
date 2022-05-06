@@ -97,7 +97,6 @@ const Styled = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* height: 100vh; */
     scroll-snap-align: center;
   `,
 
@@ -114,6 +113,10 @@ const Styled = {
       > * {
         color: #f0bb00;
       }
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
     }
 
     p:nth-child(2) {
@@ -123,6 +126,10 @@ const Styled = {
       font-style: normal;
       font-weight: 700;
       font-size: 35px;
+
+      @media (max-width: 767px) {
+        font-size: 25px;
+      }
     }
   `,
 
@@ -173,6 +180,10 @@ const Styled = {
 
     > * {
       color: #f0bb00;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 11px;
     }
   `,
 };
