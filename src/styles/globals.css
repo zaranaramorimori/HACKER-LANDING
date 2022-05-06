@@ -24,7 +24,7 @@ button {
 body {
   display: flex;
   justify-content: center;
-  background: white;
+  background: black;
   color: black;
   -ms-overflow-style: none;
 }
