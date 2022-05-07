@@ -3,6 +3,8 @@ import useInput from '@src/hooks/useInput';
 import { client } from '@src/lib/api/api';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import Fade from 'react-reveal/Fade';
+import Tada from 'react-reveal/Tada';
 
 import popupBg from '../../assets/blackBackground.png';
 import buttonBg from '../../assets/hackerButton.svg';
@@ -55,10 +57,14 @@ function Register() {
     <Styled.Main>
       <Image src={phoneBoy} alt="해커 앱을 보여주는 청년" width="243px"></Image>
       <Styled.InfoLabelWrapper>
-        <p>
-          <span>사전 등록</span> 하고
-        </p>
-        <p>가장 빠르게 머리를 길러 봐요</p>
+        <Fade top>
+          <p>
+            <span>사전 등록</span> 하고
+          </p>
+        </Fade>
+        <Fade top delay={500}>
+          <p>가장 빠르게 머리를 길러 봐요</p>
+        </Fade>
       </Styled.InfoLabelWrapper>
       <Styled.InputWrapper>
         {isRegistered ? (
@@ -81,9 +87,11 @@ function Register() {
           </>
         )}
       </Styled.InputWrapper>
-      <Styled.RegisterButton onClick={handleRegister}>
-        {isRegistered ? '사전등록 완료!' : '사전등록 하기!'}
-      </Styled.RegisterButton>
+      <Tada delay={1000}>
+        <Styled.RegisterButton onClick={handleRegister}>
+          {isRegistered ? '사전등록 완료!' : '사전등록 하기!'}
+        </Styled.RegisterButton>
+      </Tada>
       <Styled.WithLabel>
         <span>{devCount}명</span>의 개발자가 함께하고 있어요.
       </Styled.WithLabel>

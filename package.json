@@ -17,6 +17,7 @@
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-reveal": "^1.2.2",
     "reset-css": "^5.0.1",
     "stylelint-config-concentric-order": "^5.0.0"
   },
