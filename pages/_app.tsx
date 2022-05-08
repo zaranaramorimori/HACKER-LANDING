@@ -19,10 +19,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="HACKER" />
-        <meta property="og:url" content="hacker-landing.vercel.app" />
+        <meta property="og:url" content="https://hacker-landing.vercel.app/" />
         <meta property="og:site_name" content="HACKER" />
         <meta property="og:description" content="콩 심은 데 콩 나고, 커밋한 데 머리 난다!" />
-        <meta property="og:image" content="/favicon.png" />
+        <meta
+          property="og:image"
+          content="https://hacker-image.s3.ap-northeast-2.amazonaws.com/hair/06_22.png"
+        />
       </Head>
       <Component {...pageProps} />
     </>
