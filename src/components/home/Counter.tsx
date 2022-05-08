@@ -75,7 +75,6 @@ const Styled = {
 
   WholeCounter: styled.p`
     font-family: 'Noto Sans KR';
-    font-style: normal;
     font-weight: 900;
     font-size: 50px;
     margin-top: 98px;

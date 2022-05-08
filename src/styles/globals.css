@@ -68,7 +68,10 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 @font-face {
-  font-family: 'NotoSansKR-Regular';
-  font-weight: 400;
-  src: url('/fonts/NotoSansKR-Regular.otf') format('truetype');
+  font-family: 'Noto Sans CJK KR';
+  font-weight: normal;
+  font-style: normal;
+  src: url('fonts/NotoSansKR-Regular.woff2') format('woff2'),
+    url('fonts/NotoSansKR-Regular.woff') format('woff'),
+    url('fonts/NotoSansKR-Regular.otf') format('truetype');
 }
