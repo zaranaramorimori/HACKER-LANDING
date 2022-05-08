@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <title>HACKER</title>
         <link rel="shortcut icon" href="/favicon.png" />
       </Head>
       <Component {...pageProps} />
