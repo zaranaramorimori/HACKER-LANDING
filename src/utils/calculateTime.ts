@@ -10,8 +10,6 @@ export const calculateTimeLeft = () => {
   const targetDate = new Date(2022, 4, 10, 17);
   const nowDate = new Date();
 
-  console.log(targetDate, nowDate);
-
   const difference = targetDate.getTime() - nowDate.getTime();
 
   let timeLeft: TimeLeft = {} as TimeLeft;

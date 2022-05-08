@@ -19,6 +19,9 @@ const Styled = {
     border: 3px solid #000000;
     border-radius: 20px;
     padding-left: 15px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
     &::placeholder {
       color: #9f9f9f;
     }

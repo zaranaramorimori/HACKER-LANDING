@@ -178,6 +178,9 @@ const Styled = {
     background: url(${buttonBg.src});
     color: white;
     font-size: 17px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
 
     @media (max-width: 767px) {
       font-size: 14px;

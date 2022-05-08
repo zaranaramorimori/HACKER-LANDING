@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  font-family: NotoSansKR-Regular;
+  /* font-family: 'Noto Sans CJK KR'; */
 }
 
 html {
@@ -68,10 +68,30 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 @font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: normal;
-  font-style: normal;
-  src: url('fonts/NotoSansKR-Regular.woff2') format('woff2'),
-    url('fonts/NotoSansKR-Regular.woff') format('woff'),
-    url('fonts/NotoSansKR-Regular.otf') format('truetype');
+  font-family: 'Noto Sans KR';
+  font-weight: 300;
+  src: url('./fonts/NotoSansKR-Light.otf') format('woff2'),
+    url('./fonts/NotoSansKR-Light.otf') format('woff'),
+    url('./fonts/NotoSansKR-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  src: url('./fonts/NotoSansKR-Regular.otf') format('woff2'),
+    url('./fonts/NotoSansKR-Regular.otf') format('woff'),
+    url('./fonts/NotoSansKR-Regular.otf') format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 500;
+  src: url('./fonts/NotoSansKR-Medium.otf') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  src: url('./fonts/NotoSansKR-Bold.otf') format('woff2'),
+    url('./fonts/NotoSansKR-Bold.otf') format('woff'),
+    url('./fonts/NotoSansKR-Bold.otf') format('truetype');
 }

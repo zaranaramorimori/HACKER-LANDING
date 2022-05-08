@@ -57,6 +57,9 @@ const Styled = {
     color: white;
     text-align: center;
     margin-top: 85px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
 
     @media (max-width: 767px) {
       width: 247px;
