@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export const client = axios.create({
-  baseURL: 'http://3.36.251.74:5000',
+  baseURL: 'https://asia-northeast3-hacker-event.cloudfunctions.net/app/api/',
   timeout: 1000,
 });
