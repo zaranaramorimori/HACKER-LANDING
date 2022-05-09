@@ -23,10 +23,10 @@ function Footer() {
           </Styled.InstagramWrapper>
           <Styled.PolicyWrapper>
             <Styled.TitleLabel>정책</Styled.TitleLabel>
-            <Styled.PolicyLabel href="https://www.instagram.com/haircommit/">
+            <Styled.PolicyLabel href="https://haircommit.notion.site/18b1ba8bb79840f4ba75c19331ca339d">
               이용약관
             </Styled.PolicyLabel>
-            <Styled.PolicyLabel href="https://www.instagram.com/haircommit/">
+            <Styled.PolicyLabel href="https://haircommit.notion.site/4fdc6813063647c0a98f2042d8f1cd87">
               개인정보 처리방침
             </Styled.PolicyLabel>
           </Styled.PolicyWrapper>
