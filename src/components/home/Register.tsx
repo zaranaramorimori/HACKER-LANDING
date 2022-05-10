@@ -3,6 +3,7 @@ import useInput from '@src/hooks/useInput';
 import { client } from '@src/lib/api/api';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { TailSpin } from 'react-loader-spinner';
 import Fade from 'react-reveal/Fade';
 import Tada from 'react-reveal/Tada';
 
@@ -13,6 +14,7 @@ import UserInput from '../common/UserInput';
 import { GenericResponse, RegisterResponse } from '../types';
 
 function Register() {
+  const [isLoading, setIsLoading] = useState(false);
   const [devCount, setDevCount] = useState(0);
   const [isRegistered, setIsRegistered] = useState(false);
   const [email, setEmail, onChangeEmail] = useInput<string>('');
@@ -31,9 +33,11 @@ function Register() {
 
   const handleRegister = async () => {
     if (!isRegistered) {
+      setIsLoading(true);
       try {
         const { data } = await client.post<GenericResponse<number>>('/event', loginData);
 
+        setIsLoading(false);
         if (data.status == 200) {
           setDevCount(data.data);
           setIsRegistered(true);
@@ -41,6 +45,7 @@ function Register() {
           alert(data.message);
         }
       } catch (error) {
+        setIsLoading(false);
         switch (error.response.status) {
           case 400:
             console.log('error message', error.message);
@@ -77,6 +82,10 @@ function Register() {
               감사해요!
             </p>
           </Styled.RegisterSuccess>
+        ) : isLoading ? (
+          <Styled.RegisterSuccess>
+            <TailSpin height="40" width="40" color="white" ariaLabel="loading" />
+          </Styled.RegisterSuccess>
         ) : (
           <>
             <UserInput
@@ -88,9 +97,11 @@ function Register() {
         )}
       </Styled.InputWrapper>
       <Tada delay={1000}>
-        <Styled.RegisterButton onClick={handleRegister}>
-          {isRegistered ? '사전등록 완료!' : '사전등록 하기!'}
-        </Styled.RegisterButton>
+        <>
+          <Styled.RegisterButton onClick={handleRegister}>
+            {isRegistered ? '사전등록 완료!' : '사전등록 하기!'}
+          </Styled.RegisterButton>
+        </>
       </Tada>
       <Styled.WithLabel>
         <span>{devCount}명</span>의 개발자가 함께하고 있어요.
@@ -152,8 +163,12 @@ const Styled = {
 
   RegisterSuccess: styled.div`
     width: 287px;
+    height: 133px;
     background-image: url(${popupBg.src});
     background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     > p {
       font-family: 'Noto Sans KR';
