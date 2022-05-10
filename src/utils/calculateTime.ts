@@ -7,7 +7,7 @@ export type TimeLeft = {
 
 export const calculateTimeLeft = () => {
   // const targetDate = new Date('2022-05-10 17:00:00');
-  const targetDate = new Date(2022, 4, 10, 17);
+  const targetDate = new Date(2022, 4, 15, 17, 12);
   const nowDate = new Date();
 
   const difference = targetDate.getTime() - nowDate.getTime();
